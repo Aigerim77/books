@@ -42,7 +42,7 @@ section{
     box-shadow: 2px 2px 5px 3px #15bb4c;
 }
 
-.container{
+.book_container{
     border: 3px solid red;
     padding: 300px;
     display: flex;
@@ -52,10 +52,47 @@ section{
 }
 
 
-.book{
-    border: 3px solid blue;
-    height: 300px;
-    background: lightgreen;
-    flex-grow: 1;
+.book_item{
+    border: 1px solid rgb(206, 94, 94);
+    border-radius: 5px;
+    width: 24%;
+    padding: 10px 15px;
+    background-color: #0bb33b;
+    margin-bottom: 20px;
+
 }
 
+
+
+.book_item.header{
+    display: flex;
+    align-items: center;
+    min-height: 31px;
+}
+
+.book_item.header h4{
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.book_item.footer{
+    display: flex;
+    justify-self: space-between;
+    align-items: center;
+}
+
+.book_item.footer p{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+.book_item.footer .action_buttons{
+    display: flex;
+}
+
+.book_item.footer img{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}

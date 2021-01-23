@@ -1,22 +1,16 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from .models import BookShop
 
 def homepage(request):
     return HttpResponse('Books')
 
 def books(request):
-    return render(request, 'books.html')
+    book_list = BookShop.objects.all()
+    return render(request, 'books.html', {"book_list": book_list})
 
 def add_book(request):
     form = request.POST
-    title = form['book_title']
-    book_title = Book(title=title)
-    book_title.save()
-
-    subtitle = form['book_subtitle']
-    book_subtitle = Book(subtitle=subtitle)
-    book_subtitle.save()
-
-    description = form['book_description']
-    book_description = Book(description=description)
-    book_description.save()
+    text = form["book_text"]
+    book = BookShop(text=text)
+    book.save()
     return redirect(books)
